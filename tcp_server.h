@@ -74,11 +74,11 @@ private:
             });
     }
 
-    std::shared_ptr<tcp::socket> socket_;   
-    std::set<std::shared_ptr<session>>& client_;            // ссылка на контейнер с сессиями
-    std::shared_ptr<boost::asio::streambuf> streambuf_;     // указатель на буфер для ввода/вывода
-    std::shared_ptr<db::Database> db_;                      // указатель на объект БД
-    std::string str_;                                       // строка для хранения запроса от клиента и ответа от БД
+    std::shared_ptr<tcp::socket> socket_;                   // session socket
+    std::set<std::shared_ptr<session>>& client_;            // container sessions reference
+    std::shared_ptr<boost::asio::streambuf> streambuf_;     // pointer to I/O streambuff
+    std::shared_ptr<db::Database> db_;                      // pointer to object DB
+    std::string str_;                                       // str to keep client's request and DB responce
 };
 
 
