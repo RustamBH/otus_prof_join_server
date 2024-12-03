@@ -113,7 +113,7 @@ std::string db::Database::query(std::string&& q) noexcept {
 	ss >> command;
 	if (command == "INSERT") { insert(ss); }
 	else if (command == "TRUNCATE") { truncate(ss); }
-	else if (command == "PRINT") { print(ss); } //дополнительная команда для отладки
+	else if (command == "PRINT") { print(ss); } // show table data
 	else if (command == "INTERSECTION") { intersection(); }
 	else if (command == "SYMMETRIC_DIFFERENCE") { symmetric_difference(); }
 	else { res_str = "ERR_COMMAND!TRY_AGAIN!\n"; }
